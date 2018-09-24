@@ -53,41 +53,35 @@ class Results extends Component {
                         </div>
                     </div>
 
-            {this.props.results ?
-                <div id="resultContainer">
-                    {this.props.results.map((result) => {
-                        return (
-                            <div className="resultStats" key={this.props.results.indexOf(result)}> 
+                    {this.props.results ?
+                        <div id="resultContainer">
+                            {this.props.results.map((result) => {
+                                return (
+                                    <div className="resultStats" key={this.props.results.indexOf(result)}> 
 
-                                <div className="resultName">
-                                    <a href={result.url} target="_blank">{result.name}</a>
-                                </div>
+                                        <div className="resultName">
+                                            <a href={result.url} target="_blank">{result.name}</a>
+                                        </div>
 
-                                <div className="resultLanguage">
-                                    <p>{result.language}</p>
-                                </div>
+                                        <div className="resultLanguage">
+                                            <p>{result.language}</p>
+                                        </div>
 
-                                <div className="resultTag">
-                                    <p>{result.tag}</p>
-                                </div>
+                                        <div className="resultTag">
+                                            <p>{result.tag}</p>
+                                        </div>
 
-                                {result.added ? 
-
-                                null
-
-                                :
-
-                                <button id={this.props.results.indexOf(result)} onClick={(e) => {this.handleAdd(e)}}>
-                                    Add
-                                </button>
-
-                                }
-                            </div>
-                        )
-                    })}
-                </div>
-            : null
-            } 
+                                        {result.added ? null :
+                                        <button id={this.props.results.indexOf(result)} onClick={(e) => {this.handleAdd(e)}}>
+                                            Add
+                                        </button>
+                                        }
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        
+                    : null } 
                 </div>
             </section>
             

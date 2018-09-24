@@ -29,44 +29,35 @@ class List extends Component {
                     </div>
 
                     {this.props.favorites ?
+                        <div>
+                            {this.props.favorites.map((result) => {
+                                return (
+                                    <div className="resultStats" key={this.props.favorites.indexOf(result)}>
 
-                    <div>
-                        {this.props.favorites.map((result) => {
-                            return (
-                                <div className="resultStats" key={this.props.favorites.indexOf(result)}>
+                                        <div className="resultName">
+                                            <a href={result.url} target="_blank">{result.name}</a>
+                                        </div>
 
-                                    <div className="resultName">
-                                        <a href={result.url} target="_blank">{result.name}</a>
+                                        <div className="resultLanguage">
+                                            <p>{result.language}</p>
+                                        </div>
+
+                                        <div className="resultTag">
+                                            <p>{result.tag}</p>
+                                        </div>
+
+                                        {result.added ? 
+                                            <button id={this.props.favorites.indexOf(result)} onClick={(e) => { this.handleRemove(e) }}>
+                                                Remove
+                                            </button>
+                                        : null }
                                     </div>
-
-                                    <div className="resultLanguage">
-                                        <p>{result.language}</p>
-                                    </div>
-
-                                    <div className="resultTag">
-                                        <p>{result.tag}</p>
-                                    </div>
-
-                                    {result.added ? 
-                                        <button id={this.props.favorites.indexOf(result)} onClick={(e) => { this.handleRemove(e) }}>
-                                            Remove
-                                        </button>
-
-                                        : null
-                                    }
-                                </div>
-                            )
-                        })}
-                    </div>
-                    
-                
+                                )
+                            })}
+                        </div>
                     : null}
-
                 </div>
-
-            </section>
-
-            
+            </section> 
         );
     }
 };

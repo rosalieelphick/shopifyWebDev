@@ -27,9 +27,7 @@ class App extends Component {
           "url": result.html_url,
           "added": false
         }
-
         dataArray.push(obj);
-
       });
       this.releaseCall();
     });
@@ -37,28 +35,22 @@ class App extends Component {
 
   releaseCall = () => {
     dataArray.forEach((item) => {
-
       let index = dataArray.indexOf(item)
-
       axios({
         method: 'GET',
         url: `https://api.github.com/repos/${item.name}/releases`,
         dataResponse: 'json'
       }).then((res) => {
-        console.log(res)
         if (res.data.length > 0) {
           dataArray[index].tag = res.data[0].tag_name
         } else {
           dataArray[index].tag = "-"
         }
-
         this.setState({
           results: dataArray
-        })
-        
+        })    
       })
     })
-
   }
 
   handleAdd = (index) => {
@@ -77,7 +69,6 @@ class App extends Component {
   }
 
   handleRemove = (indexRemove) => {
-
     let favoriteArray = Array.from(this.state.favorites);
     let originalIndex = favoriteArray[indexRemove].originalIndex;
     
@@ -85,7 +76,6 @@ class App extends Component {
     listArray[originalIndex].added = false;
 
     favoriteArray.splice(indexRemove, 1)
-    console.log(favoriteArray)
 
     this.setState({
       favorites: favoriteArray,
@@ -106,7 +96,7 @@ class App extends Component {
       <div className="App">
 
         <header>
-          <h1>My Github Faves</h1>
+          <h1>My Github Favorites</h1>
         </header>
 
         <main>
