@@ -11,12 +11,16 @@ body {
 }
 
 header {
-  background-color: purple;
-  padding: 30px;
+  background-color: #7d22f9;
+  height: 20vh;
+  display: flex;
+  align-items: center;
 }
 
 h1 {
   margin: 0;
+  width: 100%;
+  color: white;
 }
 
 p {
@@ -33,8 +37,8 @@ button {
   border: 0;
   background-color: inherit;
   text-decoration: underline;
-  display: flex;
-  align-items: start;
+  flex-basis: 40px;
+  color: #7d22f9;
 }
 
 main {
@@ -43,9 +47,13 @@ main {
 
 .results,
 .list {
-  margin-top: 25px;
+  padding-top: 25px;
   flex-basis: 50%;
-  border: solid 1px red;
+  height: calc(80vh - 25px);
+}
+
+.list {
+  background-color: #f4ebff;
 }
 
 /* RESULTS */
@@ -54,18 +62,23 @@ main {
   width: 100%;
   display: flex;
   margin-bottom: 25px;
+  justify-content: space-between;
 }
 
 .search {
-  flex-basis: 80%;
+  flex-basis: 68%;
   padding: 10px;
+  border-radius: 4px;
+  border: solid 1px black;
 }
 
 .submit {
-  flex-basis: 20%;
+  flex-basis: 25%;
   padding: 10px;
   border: 0;
-  background-color: purple;
+  background-color: #7d22f9;
+  color: white;
+  border-radius: 4px;
 }
 
 .headings {
@@ -80,16 +93,24 @@ main {
 .name,
 .language,
 .tag {
-  flex-basis: 150px;
+  flex-basis: 170px;
   flex-grow: 0;
   flex-shrink: 0;
-  border: solid 1px red;
   text-align: left;
+}
+
+.language,
+.tag {
+  flex-shrink: 1;
+}
+
+.addPlaceholder {
+  width: 20px;
+  flex-basis: 40px;
 }
 
 .resultStats {
   width: 100%;
-  border: solid 1px blue;
   text-align: left;
   display: flex;
 }
@@ -97,11 +118,16 @@ main {
 .resultName,
 .resultLanguage,
 .resultTag {
-  width: 150px;
+  flex-shrink: 0;
+  flex-basis: 170px;
   text-align: left;
-  border: solid 1px pink;
   overflow: hidden;
   display: inline-block;
+}
+
+.resultLanguage,
+.resultTag {
+  flex-shrink: 1;
 }
 
 

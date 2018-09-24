@@ -24,6 +24,8 @@ class List extends Component {
                         <div className="tag">
                             <p>Latest tag</p>
                         </div>
+                        <div className="addPlaceholder">
+                        </div>
                     </div>
 
                     {this.props.favorites ?

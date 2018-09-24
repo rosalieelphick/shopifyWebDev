@@ -17,7 +17,6 @@ class Results extends Component {
             searchQuery: e.target.value
         }, () => {
             if (this.state.searchQuery.length === 0) {
-                // document.getElementById("resultContainer").innerHTML = "";
                 this.props.clearFields();
             }
         })
@@ -49,6 +48,8 @@ class Results extends Component {
                         </div>
                         <div className="tag">
                             <p>Latest tag</p>
+                        </div>
+                        <div className="addPlaceholder">
                         </div>
                     </div>
 
