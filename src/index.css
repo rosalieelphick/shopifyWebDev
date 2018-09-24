@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 70%;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: purple;
+  padding: 30px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background-color: inherit;
+  text-decoration: underline;
+  display: flex;
+  align-items: start;
+}
+
+main {
+  display: flex;
+}
+
+.results,
+.list {
+  margin-top: 25px;
+  flex-basis: 50%;
+  border: solid 1px red;
+}
+
+/* RESULTS */
+
+.searchForm {
+  width: 100%;
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.search {
+  flex-basis: 80%;
+  padding: 10px;
+}
+
+.submit {
+  flex-basis: 20%;
+  padding: 10px;
+  border: 0;
+  background-color: purple;
+}
+
+.headings {
+  width: 100%;
+  display: flex;
+}
+
+.headings p {
+  font-weight: bold;
+}
+
+.name,
+.language,
+.tag {
+  flex-basis: 150px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: solid 1px red;
+  text-align: left;
+}
+
+.resultStats {
+  width: 100%;
+  border: solid 1px blue;
+  text-align: left;
+  display: flex;
+}
+
+.resultName,
+.resultLanguage,
+.resultTag {
+  width: 150px;
+  text-align: left;
+  border: solid 1px pink;
+  overflow: hidden;
+  display: inline-block;
+}
+
+
